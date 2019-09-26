@@ -26,7 +26,7 @@ reports
 .editorconfig
 
 # source
-src
+lib
 tsconfig.json
 
 # test

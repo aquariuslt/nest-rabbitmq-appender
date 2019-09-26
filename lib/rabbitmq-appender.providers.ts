@@ -6,11 +6,12 @@ export const createProducer = () => ({
   provide: RABBITMQ_APPENDER_PRODUCER,
   inject: [RABBITMQ_APPENDER_OPTIONS],
   useFactory: async (options: RabbitmqAppenderOptions) => {
+    if (options.url === '' || options.queue === '') {
+      return;
+    }
     const producer = new RabbitmqProducer(options.url, options.queue);
     await producer.init();
-    return {
-      producer
-    };
+    return producer;
   }
 });
 
