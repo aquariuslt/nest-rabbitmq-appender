@@ -29,6 +29,7 @@ export class RabbitmqProducer {
     await this.channel.assertQueue(this.queue, {
       durable: true
     });
+    this.inited = true;
     this.logger.debug(`[AMQP] Producer Connection with ${this.queue} established`);
   }
 
