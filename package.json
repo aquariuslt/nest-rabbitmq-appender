@@ -9,7 +9,8 @@
   "private": false,
   "scripts": {
     "build": "rimraf dist && tsc",
-    "test": "jest"
+    "test": "jest",
+    "release": "semantic-release"
   },
   "dependencies": {
     "date-fns": "^2.3.0"
@@ -33,11 +34,12 @@
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
+    "reflect-metadata": "^0.1.13",
+    "rimraf": "^2.6.3",
     "rxjs": "^6.5.3",
     "rxjs-compat": "^6.5.3",
     "semantic-release": "^15.13.24",
     "supertest": "^4.0.2",
-    "rimraf": "^2.6.3",
     "ts-jest": "^24.1.0",
     "typescript": "3.5.3"
   },
