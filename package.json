@@ -13,7 +13,8 @@
     "release": "semantic-release"
   },
   "dependencies": {
-    "date-fns": "^2.3.0"
+    "date-fns": "^2.3.0",
+    "debug": "^4.1.1"
   },
   "devDependencies": {
     "@nestjs/common": "^6.7.1",

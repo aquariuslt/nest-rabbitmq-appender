@@ -1,9 +1,9 @@
 import * as amqp from 'amqplib';
-import { Logger } from '@nestjs/common';
+import * as d from 'debug';
+
+const debug = d('rabbitmq-producer');
 
 export class RabbitmqProducer {
-  private readonly logger = new Logger(RabbitmqProducer.name);
-
   // use 10 seconds to retry connection
   private readonly RECONNECTION_DURATION = 10000;
 
@@ -17,11 +17,11 @@ export class RabbitmqProducer {
     this.connection = await amqp.connect(this.url);
 
     this.connection.on('error', async (error) => {
-      this.logger.debug(`[AMQP] Connection error: ${error.message}`);
+      debug(`[AMQP] Connection error: ${error.message}`);
       await this.reconnect();
     });
     this.connection.on('close', async () => {
-      this.logger.debug(`[AMQP] Producer Connection close with exception, should restart after seconds`);
+      debug(`[AMQP] Producer Connection close with exception, should restart after seconds`);
       await this.reconnect();
     });
 
@@ -30,11 +30,11 @@ export class RabbitmqProducer {
       durable: true
     });
     this.inited = true;
-    this.logger.debug(`[AMQP] Producer Connection with ${this.queue} established`);
+    debug(`[AMQP] Producer Connection with ${this.queue} established`);
   }
 
   async send(message: any) {
-    this.logger.debug(`[AMQP] Send message to queue: ${this.queue}`);
+    debug(`[AMQP] Send message to queue: ${this.queue}`);
     this.channel.sendToQueue(this.queue, Buffer.from(JSON.stringify(message)));
   }
 
@@ -47,10 +47,10 @@ export class RabbitmqProducer {
     setTimeout(() => {
       this.init()
         .then(() => {
-          this.logger.debug(`[AMQP] Producer reconnect successfully`);
+          debug(`[AMQP] Producer reconnect successfully`);
         })
         .catch((error) => {
-          this.logger.debug(`[AMQP] Producer reconnect fail with error: ${error.message}`);
+          debug(`[AMQP] Producer reconnect fail with error: ${error.message}`);
           this.reconnect();
         });
     }, this.RECONNECTION_DURATION);
