@@ -7,7 +7,9 @@ export const createProducer = () => ({
   inject: [RABBITMQ_APPENDER_OPTIONS],
   useFactory: async (options: RabbitmqAppenderOptions) => {
     if (options.url === '' || options.queue === '') {
-      return;
+      return {
+        inited: false // return a always false provider
+      };
     }
     const producer = new RabbitmqProducer(options.url, options.queue);
     await producer.init();
