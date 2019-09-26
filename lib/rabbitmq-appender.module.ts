@@ -7,9 +7,7 @@ export class RabbitmqAppenderModule {
   static register(options: RabbitmqAppenderOptions): DynamicModule {
     return {
       module: RabbitmqAppenderModule,
-      imports: [
-        RabbitmqAppenderCoreModule.register(options)
-      ]
+      imports: [RabbitmqAppenderCoreModule.register(options)]
     };
   }
 
@@ -17,6 +15,6 @@ export class RabbitmqAppenderModule {
     return {
       module: RabbitmqAppenderModule,
       imports: [RabbitmqAppenderCoreModule.forRootAsync(options)]
-    }
+    };
   }
 }

@@ -28,10 +28,7 @@ export class RabbitmqAppenderCoreModule {
     return {
       module: RabbitmqAppenderCoreModule,
       imports: options.imports,
-      providers: [
-        createProducer(),
-        createAsyncProducerOptions(options)
-      ],
+      providers: [createProducer(), createAsyncProducerOptions(options)],
       exports: [RabbitmqAppenderService]
     };
   }

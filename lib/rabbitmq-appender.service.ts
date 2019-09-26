@@ -11,7 +11,7 @@ enum LogLevel {
 }
 
 @Injectable()
-export class RabbitmqAppenderService{
+export class RabbitmqAppenderService {
   private readonly podInfo = getPodInfo();
 
   constructor(@Inject(RABBITMQ_APPENDER_PRODUCER) private readonly producer: RabbitmqProducer) {}
