@@ -1,5 +1,10 @@
 # NestJS RabbitMQ Logger Appender
 
+[![NPM](https://img.shields.io/npm/v/nest-rabbitmq-appender.svg)](https://www.npmjs.com/package/nest-rabbitmq-appender) 
+[![Github Workflow Status](https://github.com/aquariuslt/nest-rabbitmq-appender/workflows/ci/badge.svg)](https://github.com/aquariuslt/nest-rabbitmq-appender) 
+[![codecov](https://codecov.io/gh/aquariuslt/nest-rabbitmq-appender/branch/master/graph/badge.svg)](https://codecov.io/gh/aquariuslt/nest-rabbitmq-appender) 
+[![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+
 Provide a rabbitmq logger appender like logback options style.
 
 > Inspired by `spring-amqp` project
@@ -8,7 +13,15 @@ Provide a rabbitmq logger appender like logback options style.
 
 ## Usage
 
+### Installation
+
+```shell script
+yarn add nest-rabbitmq-appender
+```
+
 ### Definition Custom Logger using Appender
+
+You should use your your custom logger to control your logger behavior, appender only provide an injectable service adapt to logger style.
 
 ```typescript
 import { Injectable, Logger } from '@nestjs/common';
@@ -44,6 +57,16 @@ export class RemoteLogger extends Logger {
 ```
 
 ### Register Module
+
+You should pass an AMQP connection option as register `RabbitmqAppenderModule` options at least with `url` and `queue`.
+
+```typescript
+export type RabbitmqAppenderOptions = {
+  url: string; // rabbitmq connection url
+  queue: string; // rabbitmq logging queue
+} & Partial<Options.Connect>;
+```
+
 
 ```typescript
 import { Module } from '@nestjs/common';

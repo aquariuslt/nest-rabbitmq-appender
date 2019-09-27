@@ -7,6 +7,10 @@
   "author": "Aquariuslt <superaquariuslt@gmail.com>",
   "license": "MIT",
   "private": false,
+  "keywords": [
+    "nestjs",
+    "logback"
+  ],
   "scripts": {
     "build": "rimraf dist && tsc",
     "test": "jest",

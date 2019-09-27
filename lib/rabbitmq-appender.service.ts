@@ -34,7 +34,7 @@ export class RabbitmqAppenderService {
       ...this.podInfo,
       '@level': level,
       '@context': context,
-      '@partition': createDatePartition(),
+      day: createDatePartition(),
       message
     };
   }
