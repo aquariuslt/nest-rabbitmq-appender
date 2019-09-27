@@ -9,7 +9,9 @@
   "private": false,
   "keywords": [
     "nestjs",
-    "logback"
+    "rabbitmq",
+    "logback",
+    "logger"
   ],
   "scripts": {
     "build": "rimraf dist && tsc",
