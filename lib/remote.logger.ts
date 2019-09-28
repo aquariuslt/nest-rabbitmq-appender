@@ -3,7 +3,7 @@ import { RabbitmqAppenderService } from './rabbitmq-appender.service';
 
 @Injectable()
 export class RemoteLogger extends Logger {
-  private enabled = false;
+  enabled = false;
   private remoteLoggingAppender: RabbitmqAppenderService;
 
   constructor(
@@ -14,6 +14,7 @@ export class RemoteLogger extends Logger {
     super(context, isTimestampEnabled);
     if (appender) {
       this.remoteLoggingAppender = appender;
+      this.enabled = true;
     }
   }
 
