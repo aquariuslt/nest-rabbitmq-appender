@@ -1,4 +1,4 @@
-import { RABBITMQ_APPENDER_OPTIONS, RABBITMQ_APPENDER_PRODUCER } from './rabbitmq-appender.constants';
+import { RABBITMQ_APPENDER_OPTIONS, RABBITMQ_APPENDER_PRODUCER, RABBITMQ_REMOTE_LOGGER } from './rabbitmq-appender.constants';
 import { RabbitmqAppenderAsyncOptions, RabbitmqAppenderOptions } from './rabbitmq-appender.options';
 import { RabbitmqProducer } from './rabbitmq.producer';
 

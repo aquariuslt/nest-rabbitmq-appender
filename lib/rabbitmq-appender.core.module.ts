@@ -3,11 +3,12 @@ import { RABBITMQ_APPENDER_OPTIONS } from './rabbitmq-appender.constants';
 import { RabbitmqAppenderAsyncOptions, RabbitmqAppenderOptions } from './rabbitmq-appender.options';
 import { createAsyncProducerOptions, createProducer } from './rabbitmq-appender.providers';
 import { RabbitmqAppenderService } from './rabbitmq-appender.service';
+import { RemoteLogger } from './remote.logger';
 
 @Global()
 @Module({
   providers: [RabbitmqAppenderService],
-  exports: [RabbitmqAppenderService]
+  exports: [RabbitmqAppenderService, RemoteLogger]
 })
 export class RabbitmqAppenderCoreModule {
   static register(options: RabbitmqAppenderOptions): DynamicModule {
@@ -18,9 +19,10 @@ export class RabbitmqAppenderCoreModule {
         {
           provide: RABBITMQ_APPENDER_OPTIONS,
           useValue: options
-        }
+        },
+        RemoteLogger
       ],
-      exports: [RabbitmqAppenderService]
+      exports: [RabbitmqAppenderService, RemoteLogger]
     };
   }
 
@@ -28,8 +30,8 @@ export class RabbitmqAppenderCoreModule {
     return {
       module: RabbitmqAppenderCoreModule,
       imports: options.imports,
-      providers: [createProducer(), createAsyncProducerOptions(options)],
-      exports: [RabbitmqAppenderService]
+      providers: [createProducer(), createAsyncProducerOptions(options), RemoteLogger],
+      exports: [RabbitmqAppenderService, RemoteLogger]
     };
   }
 }
