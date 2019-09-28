@@ -19,43 +19,6 @@ Provide a rabbitmq logger appender like logback options style.
 yarn add nest-rabbitmq-appender
 ```
 
-### Definition Custom Logger using Appender
-
-You should use your your custom logger to control your logger behavior, appender only provide an injectable service adapt to logger style.
-
-```typescript
-import { Injectable, Logger } from '@nestjs/common';
-import { RabbitmqAppenderService } from 'nest-rabbitmq-appender';
-
-@Injectable()
-export class RemoteLogger extends Logger {
-  private remoteLoggingAppender: RabbitmqAppenderService;
-
-  constructor(context, isTimestampEnabled) {
-    super(context, isTimestampEnabled);
-  }
-
-  setAppender(appender: RabbitmqAppenderService) {
-    this.remoteLoggingAppender = appender;
-  }
-
-  log(message: string, context?: string): void {
-    super.log(message, context);
-    this.remoteLoggingAppender.info(message, context);
-  }
-
-  warn(message: string, context?: string): void {
-    super.warn(message, context);
-    this.remoteLoggingAppender.warn(message, context);
-  }
-
-  error(message: string, trace?: string, context?: string): void {
-    super.error(message, trace, context);
-    this.remoteLoggingAppender.error(message, context, { trace: trace });
-  }
-}
-```
-
 ### Register Module
 
 You should pass an AMQP connection option as register `RabbitmqAppenderModule` options at least with `url` and `queue`.
@@ -79,10 +42,28 @@ import { RemoteLogger } from '@/remote.logger';
     ConfigModule,
     RabbitmqAppenderModule.forRootAsync({
       inject: [ConfigService],
-      useFactory: (config: ConfigService) => config.loggingAppenderOptions
+      useFactory: (config: ConfigService) => config.loggingAppenderOptions // config.loggingAppenderOptions suppose be type of `RabbitmqAppenderOptions`
     })
-  ],
-  providers: [RemoteLogger]
+  ]
 })
 export class AppModule {}
+```
+
+### Use RemoteLogger extending NestJS Bundled logger
+
+```typescript
+import { NestFactory } from '@nestjs/core';
+import { AppModule } from './app.module';
+import { RemoteLogger } from 'nest-rabbitmq-appender';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule, {
+    logger: false
+  });
+  app.useLogger(app.get(RemoteLogger));
+
+  await app.listen(3000);
+}
+bootstrap();
+
 ```

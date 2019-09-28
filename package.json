@@ -53,6 +53,7 @@
   "peerDependencies": {
     "@nestjs/common": "^6.0.0",
     "@nestjs/core": "^6.0.0",
+    "amqplib": "^0.5.5",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0"
   },
