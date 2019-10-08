@@ -4,13 +4,13 @@ services:
   rabbitmq:
     container_name: test_rabbitmq
     image: rabbitmq:3-management
-    ports:
-      - 5673:5672
     environment:
       RABBITMQ_DEFAULT_PASS: devuser
       RABBITMQ_DEFAULT_USER: devuser
     logging:
       driver: none
+    networks:
+      - test-network
 
   lib:
     container_name: test_lib
@@ -21,3 +21,13 @@ services:
     depends_on:
       - rabbitmq
     command: yarn test
+    links:
+      - rabbitmq
+    networks:
+      - test-network
+    environment:
+      CI: 'true'
+
+networks:
+  test-network:
+    driver: bridge

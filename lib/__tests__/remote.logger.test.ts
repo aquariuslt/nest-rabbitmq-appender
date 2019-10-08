@@ -1,8 +1,8 @@
 import { RemoteLogger } from '../remote.logger';
 import { Test, TestingModule } from '@nestjs/testing';
 import { RABBITMQ_APPENDER_PRODUCER } from '../rabbitmq-appender.constants';
-import { MockRabbitmqProducer } from '../__tests__/__mocks__/mock.rabbitmq.producer';
 import { RabbitmqAppenderService } from '../rabbitmq-appender.service';
+import { RabbitmqProducer } from '../rabbitmq.producer';
 
 describe('RemoteLogger', () => {
   let remoteLogger: RemoteLogger;
@@ -12,7 +12,7 @@ describe('RemoteLogger', () => {
       providers: [
         {
           provide: RABBITMQ_APPENDER_PRODUCER,
-          useValue: new MockRabbitmqProducer()
+          useValue: new RabbitmqProducer(null, null)
         },
         RabbitmqAppenderService,
         RemoteLogger
@@ -28,11 +28,15 @@ describe('RemoteLogger', () => {
 
   it('# should log w/o hook function', () => {
     remoteLogger.log(`log without hook function`);
+    remoteLogger.warn(`log without hook function`);
+    remoteLogger.error(`log without hook function`);
   });
 
   it('# should log with empty hook function', () => {
     remoteLogger.setHookFunction(() => {});
     remoteLogger.log(`log with empty hook function`);
+    remoteLogger.warn(`log with empty hook function`);
+    remoteLogger.error(`log with empty hook function`);
   });
 
   it('# should log with royal hook function', () => {
@@ -41,5 +45,14 @@ describe('RemoteLogger', () => {
       '@context': context
     }));
     remoteLogger.log(`log with royal hook function`);
+    remoteLogger.warn(`log with royal hook function`);
+    remoteLogger.error(`log with royal hook function`);
+    remoteLogger.error(
+      `log with royal hook function`,
+      `exception happen
+      at xxxx.js at line x
+      at xxxx-parent.js at line y.
+    `
+    );
   });
 });
