@@ -19,7 +19,7 @@ jobs:
       - name: Run Testing With Docker-Compose
         run: docker-compose up --exit-code-from lib
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.0
+        uses: codecov/codecov-action@v1.0.2
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./reports/coverage/lcov.info

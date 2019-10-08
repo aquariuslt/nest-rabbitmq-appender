@@ -5,7 +5,7 @@ services:
     container_name: test_rabbitmq
     image: rabbitmq:3-management
     ports:
-      - 5672:5672
+      - 5673:5672
     environment:
       RABBITMQ_DEFAULT_PASS: devuser
       RABBITMQ_DEFAULT_USER: devuser
