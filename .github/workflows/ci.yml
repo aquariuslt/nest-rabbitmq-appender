@@ -8,11 +8,15 @@ jobs:
     steps:
       - name: SCM
         uses: actions/checkout@v1
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js 10.x
         uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Run Integration Testing Under Docker Compose
+          node-version: 10.x
+      - name: Install Dependencies and Build
+        run: |
+          - yarn
+          - yarn build
+      - name: Run Testing With Docker-Compose
         run: docker-compose up --exit-code-from lib
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.0.0
