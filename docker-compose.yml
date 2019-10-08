@@ -15,6 +15,7 @@ services:
   lib:
     container_name: test_lib
     image: node:lts
+    working_dir: /home/node/app
     volumes:
       - ./:/home/node/app
     depends_on:
