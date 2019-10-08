@@ -13,11 +13,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10
-      - name: Node CI
+      - name: Install Dependencies and Build
         run: |
-          yarn install
-          yarn test
+          yarn
           yarn build
+      - name: Run Tests With Docker-Compose
+        run: docker-compose up --exit-code-from lib
       - name: Semantic Release
         run: |
           yarn release
