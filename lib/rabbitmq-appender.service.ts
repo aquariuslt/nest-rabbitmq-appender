@@ -1,8 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { RABBITMQ_APPENDER_PRODUCER } from './rabbitmq-appender.constants';
 import { RabbitmqProducer } from './rabbitmq.producer';
-import { createDatePartition } from './utils/message.util';
-import { getPodInfo } from './utils/kubernetes.env.util';
 
 enum LogLevel {
   INFO = 'INFO',
@@ -12,8 +10,6 @@ enum LogLevel {
 
 @Injectable()
 export class RabbitmqAppenderService {
-  private readonly podInfo = getPodInfo();
-
   constructor(@Inject(RABBITMQ_APPENDER_PRODUCER) private readonly producer: RabbitmqProducer) {}
 
   info(message, context, meta?) {
@@ -31,10 +27,8 @@ export class RabbitmqAppenderService {
   private createMessage(level: string, message: string, context: string, meta?: object) {
     return {
       ...meta,
-      ...this.podInfo,
       '@level': level,
       '@context': context,
-      day: createDatePartition(),
       message
     };
   }
