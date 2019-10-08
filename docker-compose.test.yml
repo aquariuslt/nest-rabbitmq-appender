@@ -1,0 +1,23 @@
+version: '3.5'
+
+services:
+  rabbitmq:
+    container_name: test_rabbitmq
+    image: rabbitmq:3-management
+    ports:
+      - 5672:5672
+    environment:
+      RABBITMQ_DEFAULT_PASS: devuser
+      RABBITMQ_DEFAULT_USER: devuser
+    restart: no
+    logging:
+      driver: none
+
+  lib:
+    container_name: test_lib
+    image: node:lts
+    volumes:
+      - ./:/home/node/app
+    depends_on:
+      - rabbitmq
+    command: yarn && yarn build && yarn test:cov

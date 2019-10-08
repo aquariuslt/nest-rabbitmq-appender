@@ -32,5 +32,9 @@ tsconfig.json
 # test
 test
 
+# testing docker-compose file
+docker-compose.test.yml
+
+
 # github workflow
 .github
