@@ -9,7 +9,6 @@ services:
     environment:
       RABBITMQ_DEFAULT_PASS: devuser
       RABBITMQ_DEFAULT_USER: devuser
-    restart: no
     logging:
       driver: none
 

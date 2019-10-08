@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Run Integration Testing Under Docker Compose
-        run: docker-compose up -f docker-compose.test.yml --exit-code-from lib
+        run: docker-compose up --exit-code-from lib
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1.0.0
         with:
