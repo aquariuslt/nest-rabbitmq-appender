@@ -20,4 +20,4 @@ services:
       - ./:/home/node/app
     depends_on:
       - rabbitmq
-    command: yarn && yarn build && yarn test:cov
+    command: yarn test
