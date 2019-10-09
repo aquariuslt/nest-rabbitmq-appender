@@ -15,5 +15,5 @@
     "skipLibCheck": true
   },
   "include": ["lib/**/*", "../index.ts"],
-  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "__tests__"]
+  "exclude": ["node_modules", "**/*.spec.ts", "**/*.test.ts", "**/test.*.ts", "__tests__"]
 }
