@@ -7,7 +7,7 @@ export class RemoteLogger extends Logger {
   private readonly enabled: boolean = false;
   private remoteLoggingAppender: RabbitmqAppenderService;
 
-  private hookFunction: Function = _.noop;
+  private hookFunction: (message?: string, context?: string) => any = _.noop;
 
   constructor(
     @Optional() context?: string,
@@ -21,7 +21,7 @@ export class RemoteLogger extends Logger {
     }
   }
 
-  setHookFunction(hookFn: Function) {
+  setHookFunction(hookFn: (message?: string, context?: string) => any) {
     this.hookFunction = hookFn;
   }
 

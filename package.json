@@ -15,7 +15,7 @@
   ],
   "scripts": {
     "build": "rimraf dist && tsc",
-    "test": "jest",
+    "test": "jest --forceExit",
     "release": "semantic-release"
   },
   "dependencies": {
@@ -101,6 +101,8 @@
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
+      "!<rootDir>/lib/__tests__/**/*.ts",
+      "!<rootDir>/lib/index.ts",
       "<rootDir>/lib/**/*.ts"
     ],
     "testMatch": [

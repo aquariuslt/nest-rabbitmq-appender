@@ -25,7 +25,7 @@ describe('RabbitmqAppenderService', () => {
     await producer.init();
   });
 
-  afterEach(async () => {
+  afterEach( () => {
     if (producer.inited) {
       producer.close();
     }
