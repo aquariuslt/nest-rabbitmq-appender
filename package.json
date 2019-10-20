@@ -19,27 +19,27 @@
     "release": "semantic-release"
   },
   "dependencies": {
-    "date-fns": "^2.3.0",
+    "date-fns": "^2.5.0",
     "debug": "^4.1.1",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@nestjs/common": "^6.7.1",
-    "@nestjs/core": "^6.7.1",
-    "@nestjs/platform-express": "^6.7.1",
-    "@nestjs/testing": "^6.7.1",
+    "@nestjs/common": "^6.8.3",
+    "@nestjs/core": "^6.8.3",
+    "@nestjs/platform-express": "^6.8.3",
+    "@nestjs/testing": "^6.8.3",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/git": "^7.0.16",
     "@types/amqplib": "^0.5.13",
-    "@types/jest": "^24.0.18",
-    "@types/lodash": "^4.14.142",
-    "@types/node": "^12.7.8",
+    "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.144",
+    "@types/node": "^12.11.1",
     "@types/supertest": "2.0.8",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
     "amqplib": "^0.5.5",
-    "eslint": "^6.0.1",
-    "eslint-config-prettier": "^6.0.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-prettier": "^3.1.0",
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
@@ -50,7 +50,7 @@
     "semantic-release": "^15.13.24",
     "supertest": "^4.0.2",
     "ts-jest": "^24.1.0",
-    "typescript": "3.6.3"
+    "typescript": "^3.6.4"
   },
   "peerDependencies": {
     "@nestjs/common": "^6.0.0",
@@ -123,8 +123,11 @@
         "@semantic-release/git",
         {
           "assets": [
+            "dist",
             "docs",
-            "package.json"
+            "package.json",
+            "README.md",
+            "CHANGELOG.md"
           ],
           "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
         }

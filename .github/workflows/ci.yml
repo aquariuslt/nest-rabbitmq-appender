@@ -1,14 +1,14 @@
 name: ci
 
 on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: SCM
         uses: actions/checkout@v1
-      - name: Use Node.js 10
+      - name: Setup Node Environment
         uses: actions/setup-node@v1
         with:
           node-version: 10
