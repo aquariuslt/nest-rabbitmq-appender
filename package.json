@@ -15,8 +15,10 @@
     "logger"
   ],
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "prebuild": "rimraf dist",
+    "build": "tsc",
     "test": "jest --forceExit",
+    "test:cov": "jest --coverage --forceExit",
     "release": "semantic-release"
   },
   "dependencies": {
@@ -110,7 +112,6 @@
       "<rootDir>/lib/**/*.test.ts"
     ],
     "testEnvironment": "node",
-    "collectCoverage": true,
     "coverageDirectory": "<rootDir>/reports/coverage"
   },
   "release": {
