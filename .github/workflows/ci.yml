@@ -16,7 +16,7 @@ jobs:
         run: |
           yarn
           yarn build
-      - name: Run Tests With Docker-Compose
+      - name: Run tests with docker-Compose
         run: docker-compose -f docker-compose.test.yml up --exit-code-from lib
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1

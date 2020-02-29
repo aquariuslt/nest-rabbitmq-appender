@@ -1,10 +1,11 @@
 const createTestRmqUrl = () => {
-  let TEST_RABBITMQ_HOST = 'localhost';
+  let TEST_RABBITMQ_URL = 'amqp://devuser:devuser@localhost:5672';
   if (process.env.CI && process.env.CI === 'true') {
-    TEST_RABBITMQ_HOST = 'test_rabbitmq';
+    TEST_RABBITMQ_URL = process.env.RABBITMQ_URL;
   }
 
-  return `amqp://devuser:devuser@${TEST_RABBITMQ_HOST}:5672`;
+  console.log(`TEST_RABBITMQ_URL=${TEST_RABBITMQ_URL}`)
+  return TEST_RABBITMQ_URL;
 };
 
 export const TEST_RMQ_URL = createTestRmqUrl();

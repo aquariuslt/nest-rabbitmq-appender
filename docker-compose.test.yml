@@ -11,9 +11,6 @@ services:
       driver: none
     networks:
       - test-network
-    ports:
-      - 5672:5672
-      - 15672:15672
 
   lib:
     container_name: test_lib
@@ -30,6 +27,7 @@ services:
       - test-network
     environment:
       CI: 'true'
+      RABBITMQ_URL: amqp://devuser:devuser@rabbitmq:5672
 
 networks:
   test-network:
