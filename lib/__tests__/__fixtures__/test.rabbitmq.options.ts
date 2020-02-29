@@ -4,7 +4,6 @@ const createTestRmqUrl = () => {
     TEST_RABBITMQ_URL = process.env.RABBITMQ_URL;
   }
 
-  console.log(`TEST_RABBITMQ_URL=${TEST_RABBITMQ_URL}`)
   return TEST_RABBITMQ_URL;
 };
 
