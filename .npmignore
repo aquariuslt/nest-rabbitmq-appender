@@ -39,4 +39,4 @@ docker-compose.yml
 
 # github workflow
 .github
-renovate.json
+.github/renovate.json
