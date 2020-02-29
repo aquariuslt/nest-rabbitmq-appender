@@ -11,8 +11,6 @@ jobs:
         env:
           RABBITMQ_DEFAULT_PASS: devuser
           RABBITMQ_DEFAULT_USER: devuser
-        logging:
-          driver: none
     container:
       image: node:lts
       env:
