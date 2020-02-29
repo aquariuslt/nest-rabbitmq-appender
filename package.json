@@ -97,19 +97,15 @@
       "js",
       "json"
     ],
-    "moduleNameMapper": {
-      "^@/(.*)$": "<rootDir>/lib/$1"
-    },
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
     },
     "collectCoverageFrom": [
-      "!<rootDir>/lib/__tests__/**/*.ts",
-      "!<rootDir>/lib/index.ts",
-      "<rootDir>/lib/**/*.ts"
+      "<rootDir>/src/*.ts",
+      "!<rootDir>/src/__tests__/**/*.ts"
     ],
     "testMatch": [
-      "<rootDir>/lib/**/*.test.ts"
+      "<rootDir>/src/**/*.test.ts"
     ],
     "testEnvironment": "node",
     "coverageDirectory": "<rootDir>/reports/coverage"

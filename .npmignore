@@ -27,6 +27,7 @@ reports
 
 # source
 lib
+src
 tsconfig.json
 
 # test
@@ -39,4 +40,3 @@ docker-compose.yml
 
 # github workflow
 .github
-.github/renovate.json
