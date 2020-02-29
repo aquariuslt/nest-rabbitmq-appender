@@ -1,6 +1,6 @@
 const createTestRmqUrl = () => {
   let TEST_RABBITMQ_HOST = 'localhost';
-  if (process.env.CI) {
+  if (process.env.CI && process.env.CI === 'true') {
     TEST_RABBITMQ_HOST = 'test_rabbitmq';
   }
 
