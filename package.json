@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "nestjs rabbitmq logger appender",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/aquariuslt/nest-rabbitmq-appender",
   "author": "Aquariuslt <superaquariuslt@gmail.com>",
   "license": "MIT",
@@ -123,7 +124,6 @@
         "@semantic-release/git",
         {
           "assets": [
-            "dist",
             "docs",
             "package.json",
             "README.md",

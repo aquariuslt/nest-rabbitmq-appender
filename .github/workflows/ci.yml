@@ -1,13 +1,13 @@
 name: ci
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: SCM
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
       - name: Setup Node Environment
         uses: actions/setup-node@v1
         with:
@@ -19,7 +19,7 @@ jobs:
       - name: Run Tests With Docker-Compose
         run: docker-compose -f docker-compose.test.yml up --exit-code-from lib
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v1.0.2
+        uses: codecov/codecov-action@v1
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./reports/coverage/lcov.info
