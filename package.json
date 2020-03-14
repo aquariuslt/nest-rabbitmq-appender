@@ -21,6 +21,9 @@
     "test:cov": "jest --coverage --forceExit",
     "release": "semantic-release"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "date-fns": "^2.5.0",
     "debug": "^4.1.1",
