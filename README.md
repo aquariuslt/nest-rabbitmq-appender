@@ -1,6 +1,8 @@
 # NestJS RabbitMQ Logger Appender
 
-[![NPM](https://img.shields.io/npm/v/nest-rabbitmq-appender.svg)](https://www.npmjs.com/package/nest-rabbitmq-appender) [![Github Workflow Status](https://github.com/aquariuslt/nest-rabbitmq-appender/workflows/ci/badge.svg)](https://github.com/aquariuslt/nest-rabbitmq-appender) [![codecov](https://codecov.io/gh/aquariuslt/nest-rabbitmq-appender/branch/master/graph/badge.svg)](https://codecov.io/gh/aquariuslt/nest-rabbitmq-appender) [![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![NPM](https://img.shields.io/npm/v/nest-rabbitmq-appender.svg)](https://www.npmjs.com/package/nest-rabbitmq-appender) 
+[![Github Workflow Status](https://github.com/aquariuslt/nest-rabbitmq-appender/workflows/ci/badge.svg)](https://github.com/aquariuslt/nest-rabbitmq-appender) 
+[![Codecov](https://codecov.io/gh/aquariuslt/nest-rabbitmq-appender/branch/master/graph/badge.svg)](https://codecov.io/gh/aquariuslt/nest-rabbitmq-appender) [![Semantic-Release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 Provide a rabbitmq logger appender like logback options style.
 
