@@ -22,12 +22,13 @@
     "release": "semantic-release"
   },
   "files": [
-    "dist"
+    "dist",
+    "index.ts"
   ],
   "dependencies": {
-    "date-fns": "^2.5.0",
-    "debug": "^4.1.1",
-    "lodash": "^4.17.15"
+    "date-fns": "2.11.0",
+    "debug": "4.1.1",
+    "lodash": "4.17.15"
   },
   "devDependencies": {
     "@nestjs/common": "7.0.3",
