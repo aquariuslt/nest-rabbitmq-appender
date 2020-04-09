@@ -26,7 +26,7 @@
     "index.ts"
   ],
   "dependencies": {
-    "date-fns": "2.11.1",
+    "date-fns": "2.12.0",
     "debug": "4.1.1",
     "lodash": "4.17.15"
   },
