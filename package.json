@@ -54,7 +54,7 @@
     "rimraf": "3.0.2",
     "rxjs": "6.5.5",
     "rxjs-compat": "6.5.5",
-    "semantic-release": "17.0.6",
+    "semantic-release": "17.0.7",
     "supertest": "4.0.2",
     "ts-jest": "25.4.0",
     "typescript": "3.8.3"
