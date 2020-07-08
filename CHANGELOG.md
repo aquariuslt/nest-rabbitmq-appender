@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/aquariuslt/nest-rabbitmq-appender/compare/v2.0.4...v2.0.5) (2020-07-08)
+
+
+### Bug Fixes
+
+* **deps:** update dependency lodash to v4.17.17 ([535a629](https://github.com/aquariuslt/nest-rabbitmq-appender/commit/535a629f0ea06afaa0ce294f214ee780a2f00d7f))
+
 ## [2.0.4](https://github.com/aquariuslt/nest-rabbitmq-appender/compare/v2.0.3...v2.0.4) (2020-05-18)
 
 
