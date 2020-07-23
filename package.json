@@ -38,7 +38,7 @@
     "@semantic-release/changelog": "5.0.1",
     "@semantic-release/git": "9.0.0",
     "@types/amqplib": "0.5.13",
-    "@types/jest": "26.0.5",
+    "@types/jest": "26.0.6",
     "@types/lodash": "4.14.158",
     "@types/node": "12.12.31",
     "@types/supertest": "2.0.10",
