@@ -1,6 +1,6 @@
 {
   "name": "nest-rabbitmq-appender",
-  "version": "2.0.9",
+  "version": "2.0.10",
   "description": "nestjs rabbitmq logger appender",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
