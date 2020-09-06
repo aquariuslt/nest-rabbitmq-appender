@@ -52,7 +52,7 @@
     "prettier": "2.1.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "rxjs": "6.6.2",
+    "rxjs": "6.6.3",
     "rxjs-compat": "6.6.2",
     "semantic-release": "17.1.1",
     "supertest": "4.0.2",
