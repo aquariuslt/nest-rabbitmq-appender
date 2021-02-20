@@ -28,7 +28,7 @@
   "dependencies": {
     "date-fns": "2.17.0",
     "debug": "4.3.1",
-    "lodash": "4.17.20"
+    "lodash": "4.17.21"
   },
   "devDependencies": {
     "@nestjs/common": "7.6.12",
