@@ -1,3 +1,10 @@
+## [2.0.19](https://github.com/aquariuslt/nest-rabbitmq-appender/compare/v2.0.18...v2.0.19) (2021-05-29)
+
+
+### Bug Fixes
+
+* **deps:** update dependency date-fns to v2.22.1 ([b98b6ab](https://github.com/aquariuslt/nest-rabbitmq-appender/commit/b98b6abdb95f422b624f129518cf5c51b435a849))
+
 ## [2.0.18](https://github.com/aquariuslt/nest-rabbitmq-appender/compare/v2.0.17...v2.0.18) (2021-05-08)
 
 
