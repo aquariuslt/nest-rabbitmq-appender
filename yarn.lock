@@ -794,10 +794,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-1.0.0.tgz#9c13c2574c92d4503b005feca8f2e16cc1611506"
   integrity sha512-KYyTT/T6ALPkIRd2Ge080X/BsXvy9O0hcWTtMWkPvwAwF99+vn6Dv4GzrFT/Nn1LePr+FFDbRXXlqmsy9lw2zA==
 
-"@types/amqplib@0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@types/amqplib/-/amqplib-0.8.1.tgz#895d9362335b0b88f51e45b60bcfeb76fb50492b"
-  integrity sha512-8dCjF+dHZ8Y6JOoHD1BMnxP0quAncvZq4wA/lS072NjX9vIzVRSMcmfKy2Os8ZQ8VWWp74MD09GMbVbKS6/Fxw==
+"@types/amqplib@0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@types/amqplib/-/amqplib-0.8.2.tgz#9c46f2c7fac381e4f81bcb612c00d54549697d22"
+  integrity sha512-p+TFLzo52f8UanB+Nq6gyUi65yecAcRY3nYowU6MPGFtaJvEDxcnFWrxssSTkF+ts1W3zyQDvgVICLQem5WxRA==
   dependencies:
     "@types/bluebird" "*"
     "@types/node" "*"
