@@ -40,7 +40,7 @@
     "@types/amqplib": "0.8.2",
     "@types/jest": "27.4.0",
     "@types/lodash": "4.14.178",
-    "@types/node": "16.11.21",
+    "@types/node": "16.11.22",
     "@types/supertest": "2.0.11",
     "@typescript-eslint/eslint-plugin": "5.10.1",
     "@typescript-eslint/parser": "5.10.1",
