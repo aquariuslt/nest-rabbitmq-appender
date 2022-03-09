@@ -52,7 +52,7 @@
     "prettier": "2.5.1",
     "reflect-metadata": "0.1.13",
     "rimraf": "3.0.2",
-    "rxjs": "6.6.7",
+    "rxjs": "7.5.5",
     "rxjs-compat": "6.6.7",
     "semantic-release": "19.0.2",
     "supertest": "6.2.2",
@@ -64,7 +64,7 @@
     "@nestjs/core": "^6.0.0 || ^7.0.0",
     "amqplib": "^0.5.5 || ^0.6.0 || ^0.7.0 || ^0.8.0",
     "reflect-metadata": "^0.1.12",
-    "rxjs": "^6.0.0"
+    "rxjs": "^6.0.0 || ^7.0.0"
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
