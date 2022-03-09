@@ -18,7 +18,7 @@ jobs:
         RABBITMQ_URL: amqp://devuser:devuser@rabbitmq:5672
     steps:
       - name: SCM
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - name: Install Dependencies and Build
         run: |
           yarn
