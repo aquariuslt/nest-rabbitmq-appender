@@ -39,7 +39,7 @@
     "@semantic-release/git": "10.0.1",
     "@types/amqplib": "0.8.2",
     "@types/jest": "27.4.1",
-    "@types/lodash": "4.14.180",
+    "@types/lodash": "4.14.181",
     "@types/node": "16.11.26",
     "@types/supertest": "2.0.12",
     "@typescript-eslint/eslint-plugin": "5.16.0",
