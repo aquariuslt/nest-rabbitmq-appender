@@ -37,7 +37,7 @@
     "@nestjs/testing": "7.6.18",
     "@semantic-release/changelog": "6.0.2",
     "@semantic-release/git": "10.0.1",
-    "@types/amqplib": "0.10.0",
+    "@types/amqplib": "0.10.1",
     "@types/jest": "29.2.4",
     "@types/lodash": "4.14.191",
     "@types/node": "18.11.17",
