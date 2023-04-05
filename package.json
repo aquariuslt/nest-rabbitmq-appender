@@ -31,10 +31,10 @@
     "lodash": "4.17.21"
   },
   "devDependencies": {
-    "@nestjs/common": "7.6.18",
+    "@nestjs/common": "9.4.0",
     "@nestjs/core": "7.6.18",
-    "@nestjs/platform-express": "7.6.18",
-    "@nestjs/testing": "7.6.18",
+    "@nestjs/platform-express": "9.4.0",
+    "@nestjs/testing": "9.4.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
     "@types/amqplib": "0.10.1",
@@ -60,8 +60,8 @@
     "typescript": "5.0.3"
   },
   "peerDependencies": {
-    "@nestjs/common": "^6.0.0 || ^7.0.0",
-    "@nestjs/core": "^6.0.0 || ^7.0.0",
+    "@nestjs/common": "^6.0.0 || ^7.0.0 || ^9.0.0",
+    "@nestjs/core": "^9.0.5 ^9.0.5",
     "amqplib": "^0.5.5 || ^0.6.0 || ^0.7.0 || ^0.8.0 || ^0.9.0 || ^0.10.0",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0 || ^7.0.0"
