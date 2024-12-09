@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       rabbitmq:
-        image: rabbitmq:3-management
+        image: rabbitmq:4-management
         env:
           RABBITMQ_DEFAULT_PASS: devuser
           RABBITMQ_DEFAULT_USER: devuser
@@ -18,14 +18,14 @@ jobs:
         RABBITMQ_URL: amqp://devuser:devuser@rabbitmq:5672
     steps:
       - name: SCM
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Install Dependencies and Build
         run: |
           yarn
           yarn test:cov
           yarn build
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v5
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: ./reports/coverage/lcov.info
